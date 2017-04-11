@@ -5,7 +5,7 @@
 #
 # This file may be used to create an environment using:
 # $ conda env create -f <this file>
-name: des17a-test
+name: des17a
 channels:
   - kadrlica
   - defaults
@@ -29,12 +29,14 @@ dependencies:
   - emcee  
   - ephem  
   - fitsio=0.9.11
+  - future
   - git=2.12.2=pl5.20.3_0
   - geos
   - h5py
   - healpy=1.10.3
   - ipython  
   - iraf  # astroconda
+  - jupyter
   - line_profiler  
   - matplotlib  
   - netcdf4  
@@ -77,4 +79,4 @@ dependencies:
       - cosmolopy  
       - esutil
       - textile
-      - easyaccess=1.4.0rc4
+      - easyaccess==1.4.0rc4
