@@ -22,6 +22,6 @@ alias publish=cvmfs_publish
 # User specific aliases and functions
 alias kadrlica="cd ${DES_PATH}/users/kadrlica"
 alias eups_sync="source ${DES_PATH}/users/kadrlica/sync.sh"
-alias conda_install="source ${DES_PATH}/fnal/anaconda2/conda_install.sh"
-alias conda_pip_install="source ${DES_PATH}/fnal/anaconda2/conda_pip_install.sh"
+alias conda_install="source ${HOME}/des-conda/bin/conda_install.sh"
+alias conda_pip_install="source ${HOME}/des-conda/bin/conda_pip_install.sh"
 alias conda_setup="export PATH=${DES_PATH}/fnal/anaconda2/bin:$PATH"
