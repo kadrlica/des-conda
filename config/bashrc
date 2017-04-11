@@ -1,0 +1,27 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Working directories and variables
+export DES_REPO=des.opensciencegrid.org
+export DES_PATH=/cvmfs/${DES_REPO}
+
+# Commonly used CVMFS commands
+alias cvmfs_info="cvmfs_server info ${DES_REPO}"
+alias cvmfs_tag="cvmfs_server tag ${DES_REPO}"
+alias cvmfs_transaction="cvmfs_server transaction ${DES_REPO}"
+alias cvmfs_abort="cd; cvmfs_server abort ${DES_REPO}; cd -"
+alias cvmfs_publish="cd; cvmfs_server publish ${DES_REPO}; cd -"
+
+alias transaction=cvmfs_transaction
+alias publish=cvmfs_publish
+
+# User specific aliases and functions
+alias kadrlica="cd ${DES_PATH}/users/kadrlica"
+alias eups_sync="source ${DES_PATH}/users/kadrlica/sync.sh"
+alias conda_install="source ${DES_PATH}/fnal/anaconda2/conda_install.sh"
+alias conda_pip_install="source ${DES_PATH}/fnal/anaconda2/conda_pip_install.sh"
+alias conda_setup="export PATH=${DES_PATH}/fnal/anaconda2/bin:$PATH"

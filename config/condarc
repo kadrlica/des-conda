@@ -1,0 +1,41 @@
+#http://conda-test.pydata.org/docs/config.html
+#http://conda.pydata.org/docs/install/central.html
+
+# directories to search for conda environments
+# the first entry is also the default prefix for `conda create` etc.
+#envs_dirs:
+#  - /cvmfs/des.opensciencegrid.org/fnal/anaconda2/envs
+#  - ~/.conda/envs
+
+# change ps1 when using activate (default True)
+changeps1: True
+
+# add pip, wheel and setuptools as dependencies of python
+add_pip_as_python_dependency: True
+
+# When creating new environments add these packages by default.
+#create_default_packages:
+#  - git=2.12.2
+
+# use pip when listing packages with conda list
+#use_pip: False
+
+# Don't update dependencies
+# --no-update-deps
+
+# channel locations. These override conda defaults, i.e., conda will
+# search *only* the channels listed here, in the order given. Use "defaults" to
+# automatically include all default channels. Non-url channels will be
+# interpreted as anaconda usernames (this can be changed by modifying the
+# channel_alias key; see below).
+channels:
+  - defaults
+#  - pypi
+#  - r
+#  - file://cvmfs/des.opensciencegrid.org/fnal/neilsen/conda-bld
+#  - astropy   # For astroquery
+#  - kadrlica  # For fitsio, easyaccess
+#  - mgckind   # for easyaccess
+#  - omnia     # For termcolor
+#  - jochym    # For pyfits 3.4.0 (maybe 'cxc' more reliable?)
+#  - mpi4py    # For openmpi and mpich

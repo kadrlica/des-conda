@@ -1,0 +1,80 @@
+# Default environment for FNAL DES 2017
+# 
+# To create this file:
+# $ conda env export
+#
+# This file may be used to create an environment using:
+# $ conda env create -f <this file>
+name: des17a-test
+channels:
+  - kadrlica
+  - defaults
+  - conda-forge
+  - astropy
+  - mgckind
+  - http://astroconda.org/channel/main
+  - pkgw
+  - chenghlee
+dependencies:
+  - altair
+  - astropy  
+  - astroquery  
+  - basemap  
+  - beautifulsoup4
+  - cffi
+  - corner  
+  - cx_oracle  
+  - ds9  
+  #- easyaccess
+  - emcee  
+  - ephem  
+  - fitsio=0.9.11
+  - git=2.12.2=pl5.20.3_0
+  - geos
+  - h5py
+  - healpy=1.10.3
+  - ipython  
+  - iraf  # astroconda
+  - line_profiler  
+  - matplotlib  
+  - netcdf4  
+  - nose  
+  - numba  
+  - numexpr  
+  - numpy  
+  #- oracle-instantclient  
+  - pandas  
+  - pandasql  
+  - pip  
+  - proj4  
+  - psycopg2  
+  - pyephem  
+  #- pyfits  
+  - pymc  
+  - pyslalib  
+  - python  
+  - pyyaml  
+  - r  
+  - requests  
+  - r-essentials  
+  - r-ggplot2  
+  - r-irkernel  
+  - r-mapproj  
+  - r-rpostgresql  
+  - scikit-image  
+  - scikit-learn  
+  - scipy  
+  - spherical-geometry  
+  - sqlalchemy  
+  - sqlite  
+  - svn  
+  - sympy  
+  #- termcolor  
+  #- textile  
+  #- treecorr  
+  - yaml  
+  - pip:
+      - cosmolopy  
+      - esutil
+      - textile
+      - easyaccess=1.4.0rc4
