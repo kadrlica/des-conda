@@ -5,6 +5,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Setup general editor environment                                             export EDITOR="/usr/bin/env emacs -nw"
+
 # Working directories and variables
 export DES_REPO=des.opensciencegrid.org
 export DES_PATH=/cvmfs/${DES_REPO}
