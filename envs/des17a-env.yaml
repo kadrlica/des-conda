@@ -80,4 +80,6 @@ dependencies:
       - cosmolopy  
       - esutil
       - textile
-      - easyaccess==1.4.0rc4
+      - easyaccess==1.4.0
+      - mkauthlist==1.2.1
+      - versioneer

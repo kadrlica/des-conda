@@ -23,7 +23,8 @@ alias cvmfs_abort="cd; cvmfs_server abort ${DES_REPO}; cd -"
 alias cvmfs_publish="cd; cvmfs_server publish ${DES_REPO}; cd -"
 
 alias transaction=cvmfs_transaction
-alias publish="cd; screen -S publish -dm cvmfs_server publish des.opensciencegrid.org; cd -"
+alias publish=cvmfs_publish
+alias screen_publish="cd; screen -S publish -dm cvmfs_server publish ${DES_REPO}; cd -"
 
 # User specific aliases and functions
 alias kadrlica="cd ${DES_PATH}/users/kadrlica"
