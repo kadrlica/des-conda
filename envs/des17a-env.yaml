@@ -11,10 +11,11 @@ channels:
   - defaults
   - conda-forge
   - astropy
-  - mgckind
-  - http://astroconda.org/channel/main
-  - pkgw
-  - chenghlee
+  - mgckind      # easyaccess
+  - http://astroconda.org/channel/main # iraf
+  - pkgw         # ds9
+  - chenghlee    # r-rpostgresql
+  - jochym       # pyfits
 dependencies:
   - altair
   - astropy  
@@ -50,8 +51,8 @@ dependencies:
   - pip  
   - proj4  
   - psycopg2  
-  #- pyephem
-  #- pyfits  
+  #- pyephem  
+  - pyfits  
   - pymc  
   - pyslalib  
   - python  
@@ -73,10 +74,12 @@ dependencies:
   - sympy  
   #- termcolor  
   #- textile  
-  #- treecorr  
+  - treecorr  
   - yaml  
   - pip:
       - cosmolopy  
       - esutil
       - textile
-      - easyaccess==1.4.0rc4
+      - easyaccess==1.4.0
+      - mkauthlist==1.2.1
+      - versioneer
