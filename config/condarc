@@ -27,20 +27,21 @@ update_dependencies: false
 # Don't auto update conda
 auto_update_conda: false
 
+# Don't use channel priority
+channel_priority: false
+
 # channel locations. These override conda defaults, i.e., conda will
 # search *only* the channels listed here, in the order given. Use "defaults" to
 # automatically include all default channels. Non-url channels will be
 # interpreted as anaconda usernames (this can be changed by modifying the
 # channel_alias key; see below).
 channels:
+  - kadrlica
   - defaults
   - conda-forge
-#  - pypi
-#  - r
-#  - file://cvmfs/des.opensciencegrid.org/fnal/neilsen/conda-bld
-#  - astropy   # For astroquery
-#  - kadrlica  # For fitsio, easyaccess
-#  - mgckind   # for easyaccess
-#  - omnia     # For termcolor
-#  - jochym    # For pyfits 3.4.0 (maybe 'cxc' more reliable?)
-#  - mpi4py    # For openmpi and mpich
+  - astropy
+  - mgckind      # easyaccess
+#  - http://astroconda.org/channel/main # iraf
+#  - pkgw         # ds9
+#  - chenghlee    # r-rpostgresql
+#  - jochym       # pyfits
