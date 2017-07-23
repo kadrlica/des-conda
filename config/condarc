@@ -1,11 +1,16 @@
-#http://conda-test.pydata.org/docs/config.html
-#http://conda.pydata.org/docs/install/central.html
+# This is the default conda configuration file.
+#
+# For more information, see:
+#    http://conda-test.pydata.org/docs/config.html
+#    http://conda.pydata.org/docs/install/central.html
+#
+# Author: Alex Drlica-Wagner
 
 # directories to search for conda environments
-# the first entry is also the default prefix for `conda create` etc.
+# (the first entry is also the default prefix for `conda create` etc.)
+# ADW: This is not necessary 
 #envs_dirs:
-#  - /cvmfs/des.opensciencegrid.org/fnal/anaconda2/envs
-#  - ~/.conda/envs
+#  - <ANY DIRECTORY YOU WANT>
 
 # change ps1 when using activate (default True)
 changeps1: True
