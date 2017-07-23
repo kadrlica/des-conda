@@ -1,14 +1,12 @@
-# This is the default conda configuration file.
+# Conda configuration file.
 #
 # For more information, see:
 #    http://conda-test.pydata.org/docs/config.html
 #    http://conda.pydata.org/docs/install/central.html
-#
-# Author: Alex Drlica-Wagner
+
 
 # directories to search for conda environments
 # (the first entry is also the default prefix for `conda create` etc.)
-# ADW: This is not necessary 
 #envs_dirs:
 #  - <ANY DIRECTORY YOU WANT>
 
@@ -43,9 +41,9 @@ channel_priority: false
 channels:
   - kadrlica
   - defaults
-  - conda-forge
-  - astropy
-  - mgckind      # easyaccess
+#  - conda-forge
+#  - astropy
+#  - mgckind      # easyaccess
 #  - http://astroconda.org/channel/main # iraf
 #  - pkgw         # ds9
 #  - chenghlee    # r-rpostgresql
