@@ -1,0 +1,96 @@
+# Default environment for FNAL DES 2017
+# 
+# To create this file:
+# $ conda env export
+#
+# This file may be used to create an environment using:
+# $ conda env create -v -f <this file>
+name: des18a
+channels:
+  - kadrlica
+  - defaults
+  #- mgckind      # easyaccess, cx_oracle
+  - conda-forge
+  #- astropy     # now getting from conda-forge
+  - http://astroconda.org/channel/main # iraf, ds9
+  - pkgw         # ds9
+  #- jochym       # pyfits
+  - chenghlee    # r-rpostgresql
+dependencies:
+  - altair
+  #- anaconda # updated separately
+  - astroplan
+  - astropy 
+  - astroquery
+  - basemap  
+  - beautifulsoup4 
+  - cffi 
+  - cookiecutter
+  #- conda # upgraded separately
+  - corner
+  #- cosmolopy # pip
+  - cx_oracle=5.1.2
+  - dask
+  - ds9  
+  #- easyaccess # pip
+  - emcee
+  - ephem  
+  #- esutils # pip
+  - fitsio=0.9.11
+  - future
+  - git=2.12.2=pl5.20.3_0 # kadrlica
+  - geos
+  - h5py
+  - healpy=1.11.0 # conda-forge?
+  - ipython  
+  - iraf  # astroconda
+  - jupyter
+  - line_profiler  
+  - matplotlib=2.2.2
+  - memory_profiler
+  - netcdf4  
+  - nose  
+  - numba  
+  - numexpr  
+  - numpy  
+  #- oracle-instantclient  
+  - pandas  
+  - pandasql  
+  - pip  
+  - proj4  
+  - psycopg2  
+  #- pyephem  # duplicate of ephem?
+  #- pyfits  # jochym
+  - pymc  
+  - pyslalib  # kadrlica
+  - python  
+  #- python-redmine # pip
+  - pyvo
+  - pyyaml  
+  - r  
+  - requests  
+  - r-essentials  
+  - r-ggplot2  
+  - r-irkernel  
+  - r-mapproj  
+  - r-rpostgresql=0.4  # chenghlee; conda-forge has readline issues
+  - scikit-image  
+  - scikit-learn  
+  - scipy  
+  - spherical-geometry  
+  - sqlalchemy  
+  - sqlite  
+  - svn  
+  - sympy  
+  #- termcolor  # ???
+  #- textile    # pip
+  - treecorr  
+  - vaex  # conda-forge
+  - versioneer # conda-forge
+  - pip:
+      - cosmolopy  
+      - esutil
+      - textile
+      - easyaccess==1.4.3
+      - mkauthlist==1.2.3
+      - python-redmine
