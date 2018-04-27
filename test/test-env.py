@@ -36,7 +36,7 @@ MAPPING = {
     'spherical-geometry':'spherical_geometry',
     }
 
-def test_module(module):
+def test_import(module):
     module = module.split('=')[0]
     if module in SKIP: 
         return
@@ -48,6 +48,14 @@ def test_module(module):
     except ImportError as e:
         print("Failure: import %s"%module)
         print("  ImportError: %s"%e)
+
+def test_matplotlib():
+    import matplotlib
+    import pylab as plt
+    plt.ion()
+    plt.figure()
+    plt.close('all')
+
 
 if __name__ == "__main__":
     import argparse
@@ -63,7 +71,9 @@ if __name__ == "__main__":
         if isinstance(module,dict):
             for key,val in module.items():
                 for mod in val:
-                    test_module(mod)
+                    test_import(mod)
         else:
-            test_module(module)
+            test_import(module)
 
+    # Other specific tests
+    test_matplotlib()
