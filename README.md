@@ -29,7 +29,7 @@ The `screen_publish` is necessary since conda makes a bunch of hardlinks that cv
 
 ## Create a New Environment
 
-See instructions for [managing an environment](https://conda.io/docs/using/envs.html) and [`conda create`](https://conda.io/docs/commands/conda-create.html). Assuming that you have the correct aliases from `.bashrc`
+See instructions for [managing an environment](https://conda.io/docs/using/envs.html) and [`conda create`](https://conda.io/docs/commands/conda-create.html). Assuming that you have the correct aliases from [`.bashrc`](config/bashrc)
 
 ```
 > conda_setup
@@ -51,8 +51,6 @@ Installing a package into an existing environment (especially an environment tha
 > conda install --no-update-deps --name <ENVNAME> <PACKAGE>
 > screen_publish
 ```
-
-The `--no-update-deps` is important to keep from accidentally updating everything in your environment. Even so, be sure to check the lists of installs carefully before confirming the install. If you do end up accidentally updating a package that you didn't intend to, do not be shy about using `cvmfs_abort` to rollback your changes and try again.
 
 ## Updating conda/anaconda
 
@@ -84,3 +82,10 @@ Conda can accumulate a lot of unused packages. The preserve disk space, these ca
 conda clean --packages
 conda clean --tarballs
 ```
+
+## Notes
+
+The `--no-update-deps` is important to keep from accidentally updating everything in your environment. Even so, be sure to check the lists of installs carefully before confirming the install. If you do end up accidentally updating a package that you didn't intend to, do not be shy about using `cvmfs_abort` to rollback your changes and try again.
+
+You may run into issues with conda trying to modify packages from other channels. In theory the `--override-channels` flag should stop this, but on several occasions I've found that I need to comment out the channels in the [`.condarc`][config/condarc] file.
+
