@@ -11,7 +11,6 @@ channels:
   - defaults
   - conda-forge
   - http://astroconda.org/channel/main # iraf, ds9
-  - pkgw         # ds9
   - chenghlee    # r-rpostgresql
 dependencies:
   - altair
@@ -33,17 +32,17 @@ dependencies:
   - emcee
   - ephem  
   #- esutils # pip
-  - fitsio=0.9.11
+  - fitsio=0.9.11 # kadrlica
   - future
   - git=2.12.2=pl5.20.3_0 # kadrlica
   - geos
   - h5py
   - healpy=1.11.0 # conda-forge?
-  - ipython  
+  - ipython
   - iraf  # astroconda
   - jupyter
   - line_profiler  
-  - matplotlib=2.2.2
+  - matplotlib #=2.1.2
   - memory_profiler
   - netcdf4  
   - nose  
