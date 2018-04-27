@@ -61,7 +61,7 @@ Installing a package into an existing environment (especially an environment tha
 
 ## Updating conda/anaconda
 
-From time to time we want to upgrade `conda` and `anaconda` themselves [here](https://github.com/ContinuumIO/anaconda-issues/issues/984).
+From time to time we want to upgrade `conda` and `anaconda` themselves. More details on this process can be found [here](https://github.com/ContinuumIO/anaconda-issues/issues/984).
 
 ```
 > conda_setup
@@ -81,7 +81,7 @@ There may be issues with updating the `anaconda` metapackage (i.e., unresolvable
 > screen_publish
 ```
 
-## Cleaning up unused packages
+## Cleaning Unused Packages
 
 Conda can accumulate a lot of unused packages. The preserve disk space, these can be cleaned up with:
 
