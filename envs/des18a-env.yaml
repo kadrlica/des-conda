@@ -32,7 +32,7 @@ dependencies:
   - emcee
   - ephem  
   #- esutils # pip
-  - fitsio=0.9.11 # kadrlica
+  - fitsio=0.9.12rc1 # kadrlica
   - future
   - git=2.12.2=pl5.20.3_0 # kadrlica
   - geos
