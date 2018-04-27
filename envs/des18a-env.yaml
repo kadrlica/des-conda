@@ -1,4 +1,4 @@
-# Default environment for FNAL DES 2017
+# Default environment for FNAL DES 2018
 # 
 # To create this file:
 # $ conda env export
@@ -9,12 +9,9 @@ name: des18a
 channels:
   - kadrlica
   - defaults
-  #- mgckind      # easyaccess, cx_oracle
   - conda-forge
-  #- astropy     # now getting from conda-forge
   - http://astroconda.org/channel/main # iraf, ds9
   - pkgw         # ds9
-  #- jochym       # pyfits
   - chenghlee    # r-rpostgresql
 dependencies:
   - altair
@@ -59,8 +56,6 @@ dependencies:
   - pip  
   - proj4  
   - psycopg2  
-  #- pyephem  # duplicate of ephem?
-  #- pyfits  # jochym
   - pymc  
   - pyslalib  # kadrlica
   - python  
