@@ -4,7 +4,9 @@ Control tools for the DES Anaconda installation at Fermilab. More information on
 
 The following instructions assume that your environment has the alias defined in [config/bashrc](config/bashrc).
 
-## Installing Anaconda
+## Installing Conda
+
+ADVICE: If we were starting over, it may have been a better choice to start from a miniconda installation. This would keep the base/root environment very minimal.
 
 Initial `anaconda` installation only needs to happen once, so you proably won't need this, but just in case it is recorded for posterity.
 
@@ -18,7 +20,7 @@ Initial `anaconda` installation only needs to happen once, so you proably won't 
 > screen_publish
 ```
 
-The `screen_publish` is necessary since Anaconda makes a bunch of hardlinks that cvmfs is not happy about. To check on the status of publication
+The `screen_publish` is necessary since conda makes a bunch of hardlinks that cvmfs is not happy about. To check on the status of publication
 ```
 > screen -ls
 <check for screen session name/number
@@ -50,4 +52,35 @@ Installing a package into an existing environment (especially an environment tha
 > screen_publish
 ```
 
-The `--no-update-deps` is important to keep from accidentally updating everything in your environemnt. Even so, be sure to check the lists of installs carefully before confirming the install. If you do end up accidentally updating a package that you didn't intend to, do not be shy about using `cvmfs_abort` to rollback your changes and try again.
+The `--no-update-deps` is important to keep from accidentally updating everything in your environment. Even so, be sure to check the lists of installs carefully before confirming the install. If you do end up accidentally updating a package that you didn't intend to, do not be shy about using `cvmfs_abort` to rollback your changes and try again.
+
+## Updating conda/anaconda
+
+From time to time we want to upgrade `conda` and `anaconda` themselves [here](https://github.com/ContinuumIO/anaconda-issues/issues/984).
+
+```
+> conda_setup
+> cvmfs_transaction
+> conda update anaconda 
+> conda update conda
+> screen_publish
+```
+
+There may be issues with updating the `anaconda` metapackage (i.e., unresolvable conflicts, etc.). In this case, we can update all packages, then revert to a specific anaconda instance.
+
+```
+> conda_setup
+> cvmfs_transaction
+> conda update --all
+> conda update conda
+> screen_publish
+```
+
+## Cleaning up unused packages
+
+Conda can accumulate a lot of unused packages. The preserve disk space, these can be cleaned up with:
+
+```
+conda clean --packages
+conda clean --tarballs
+```
