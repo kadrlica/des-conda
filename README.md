@@ -1,20 +1,20 @@
 # des-conda
 
-Control tools for the DES Anaconda installation at Fermilab. More information on Anaconda and conda can be found [here](https://anaconda.org/) and [here](https://conda.io/docs/index.html)
+Control tools for the DES Anaconda installation at Fermilab. Follow the links for more information on [Anaconda](https://anaconda.org/) and [conda](https://conda.io/docs/index.html).
 
 The following instructions assume that your environment has the alias defined in [config/bashrc](config/bashrc).
 
 ## Installing Conda
 
-ADVICE: If we were starting over, it may have been a better choice to start from a miniconda installation. This would keep the base/root environment very minimal.
+ADVICE: If we were starting over, it may have been a better choice to start from a [miniconda](https://conda.io/miniconda.html) installation. This would keep the base/root environment very minimal.
 
-Initial `anaconda` installation only needs to happen once, so you proably won't need this, but just in case it is recorded for posterity.
+Initial Anaconda installation only needs to happen once, so you proably won't need this, but just in case it is recorded for posterity.
 
 ```
 > ssh -l cvmfsdes oasiscfs02.fnal.gov
 > cd $DES_PATH
 > cvmfs_transaction
-# Check https://www.continuum.io/downloads for the latest installer
+# Check https://www.anaconda.com/download/ for the latest installer
 > wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
 > bash Anaconda2-4.4.0-Linux-x86_64.sh
 > screen_publish
@@ -23,8 +23,8 @@ Initial `anaconda` installation only needs to happen once, so you proably won't 
 The `screen_publish` is necessary since conda makes a bunch of hardlinks that cvmfs is not happy about. To check on the status of publication
 ```
 > screen -ls
-<check for screen session name/number
-> screen -R -d <SCREEN SESSION>
+<check for screen session name/number>
+> screen -R -d <SESSION>
 ```
 
 ## Create a New Environment
@@ -38,7 +38,14 @@ See instructions for [managing an environment](https://conda.io/docs/using/envs.
 > screen_publish
 ```
 
-In the above commands `<ENVNAME>` is the name of the environment that you want to create and `<PACKAGES>` is the list of python packages that you want to install into this environment. The conda workflow functions best when new environments are created with all their required packages rather than creating an environment and then installing packages piecemeal.
+In the above commands `<ENVNAME>` is the name of the environment that you want to create and `<PACKAGES>` is the list of python packages that you want to install into this environment. The conda workflow functions best when new environments are created with all their required packages rather than creating an environment and then installing packages piecemeal. To ensure this, we recommend pre-defining your environment in a yaml file. You can find several of these in the [env](env) directory. To create an environment from a yaml spec:
+
+```
+> conda_setup
+> cvmfs_transaction
+> conda env create -v -f <FILENAME>
+> screen_publish
+```
 
 ## Install a Package in an Existing Environment
 
