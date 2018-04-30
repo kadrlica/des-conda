@@ -3,6 +3,7 @@
 Generic python script.
 """
 __author__ = "Alex Drlica-Wagner"
+import os
 import importlib
 import yaml
 
@@ -50,7 +51,9 @@ def test_import(module):
         print("  ImportError: %s"%e)
 
 def test_matplotlib():
+    import os
     import matplotlib
+    if not os.getenv('DISPLAY'): matplotlib.use('Agg')
     import pylab as plt
     plt.ion()
     plt.figure()
