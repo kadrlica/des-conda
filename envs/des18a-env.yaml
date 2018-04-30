@@ -32,7 +32,6 @@ dependencies:
   - emcee
   - ephem  
   #- esutils # pip
-  #- extinction # pip
   - fitsio=0.9.12rc1 # kadrlica
   - future
   - git=2.12.2=pl5.20.3_0 # kadrlica
@@ -88,7 +87,6 @@ dependencies:
       - cosmolopy  
       - easyaccess==1.4.3
       - esutil
-      - extinction
       - latexdiffcite
       - mkauthlist==1.2.3
       - python-redmine
