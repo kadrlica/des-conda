@@ -34,7 +34,7 @@ See instructions for [managing an environment](https://conda.io/docs/using/envs.
 ```
 > conda_setup
 > cvmfs_transaction
-> conda create --name <ENVNAME> <PACKAGES>
+> conda create --name <ENVNAME> <PACKAGES> | tee ~/log/<ENVNAME>.log
 > screen_publish
 ```
 
@@ -43,7 +43,7 @@ In the above commands `<ENVNAME>` is the name of the environment that you want t
 ```
 > conda_setup
 > cvmfs_transaction
-> conda env create -v -f <FILENAME>
+> conda env create -v -f <FILENAME> | tee ~/log/<ENVNAME>.log
 > screen_publish
 ```
 
