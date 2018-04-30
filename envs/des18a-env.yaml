@@ -32,6 +32,7 @@ dependencies:
   - emcee
   - ephem  
   #- esutils # pip
+  #- extinction # pip
   - fitsio=0.9.12rc1 # kadrlica
   - future
   - git=2.12.2=pl5.20.3_0 # kadrlica
@@ -41,6 +42,8 @@ dependencies:
   - ipython
   - iraf  # astroconda
   - jupyter
+  - joblib 
+  #- latexdiffcite # pip
   - line_profiler  
   - matplotlib #=2.1.2
   - memory_profiler
@@ -48,7 +51,7 @@ dependencies:
   - nose  
   - numba  
   - numexpr  
-  - numpy  
+  - numpy=1.14
   #- oracle-instantclient  
   - pandas  
   - pandasql  
@@ -83,8 +86,10 @@ dependencies:
   - versioneer # conda-forge
   - pip:
       - cosmolopy  
-      - esutil
-      - textile
       - easyaccess==1.4.3
+      - esutil
+      - extinction
+      - latexdiffcite
       - mkauthlist==1.2.3
       - python-redmine
+      - textile
