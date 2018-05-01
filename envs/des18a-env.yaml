@@ -13,7 +13,7 @@ channels:
   - http://astroconda.org/channel/main # iraf, ds9
   - chenghlee    # r-rpostgresql
 dependencies:
-  - altair
+  - altair=1.2.1
   #- anaconda # updated separately
   - astroplan
   - astropy 
@@ -81,7 +81,7 @@ dependencies:
   #- termcolor  # ???
   #- textile    # pip
   - treecorr  
-  - vaex  # conda-forge
+  #- vaex=1.0.0b7  # conda-forge
   - versioneer # conda-forge
   - pip:
       - cosmolopy  
