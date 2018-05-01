@@ -59,7 +59,7 @@ dependencies:
   - psycopg2  
   - pymc  
   - pyslalib  # kadrlica
-  - python  
+  - python=2
   #- python-redmine # pip
   - pyvo
   - pyyaml  
@@ -81,7 +81,6 @@ dependencies:
   #- termcolor  # ???
   #- textile    # pip
   - treecorr  
-  #- vaex=1.0.0b7  # conda-forge
   - versioneer # conda-forge
   - pip:
       - cosmolopy  
