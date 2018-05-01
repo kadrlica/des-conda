@@ -2,7 +2,7 @@
 """
 Generic python script.
 """
-__author__ = "Alex Drlica-Wagner"
+from __future__ import print_function
 import os
 import importlib
 import yaml
@@ -37,28 +37,56 @@ MAPPING = {
     'spherical-geometry':'spherical_geometry',
     }
 
+COLORS = {
+    'OK': '\033[92m',
+    'WARN': '\033[93m',
+    'FAIL': '\033[91m',
+    'END': '\033[0m',
+}
+
+RETURN = {
+    'ok': COLORS['OK']+"Success"+COLORS['END'],
+    'fail': COLORS['FAIL']+"Failed"+COLORS['END'],
+    'warn': COLORS['WARN']+"Warning"+COLORS['END'],
+}
+
 def test_import(module):
     module = module.split('=')[0]
     if module in SKIP: 
         return
 
     module = MAPPING.get(module,module)
+    print("import %s... "%module, end="")
     try:
         importlib.import_module(module)
-        print("Success: import %s"%module)
+        print(RETURN['ok'])
     except ImportError as e:
-        print("Failure: import %s"%module)
+        print(RETURN['fail'])
         print("  ImportError: %s"%e)
 
+def test_modules(deps):
+    print("Testing modules... ")
+
+    for i,module in enumerate(deps):
+        if isinstance(module,dict):
+            for key,val in module.items():
+                for mod in val:
+                    test_import(mod)
+        else:
+            test_import(module)
+
 def test_matplotlib():
+    print("Testing matplotlib figures... ",end="")
     import os
     import matplotlib
-    if not os.getenv('DISPLAY'): matplotlib.use('Agg')
     import pylab as plt
+    if os.getenv('DISPLAY') is None: 
+        plt.switch_backend('Agg')
+    #print("matplotlib backend: %s"%matplotlib.get_backend())
     plt.ion()
     plt.figure()
     plt.close('all')
-
+    print(RETURN['ok'])
 
 if __name__ == "__main__":
     import argparse
@@ -69,14 +97,9 @@ if __name__ == "__main__":
     env = yaml.load(open(args.env))
     print("Testing: %s"%env['name'])
     deps = env['dependencies']
-
-    for i,module in enumerate(deps):
-        if isinstance(module,dict):
-            for key,val in module.items():
-                for mod in val:
-                    test_import(mod)
-        else:
-            test_import(module)
+    
+    # Test all the imports
+    test_modules(deps)
 
     # Other specific tests
     test_matplotlib()
