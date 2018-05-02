@@ -4,12 +4,6 @@
 #    http://conda-test.pydata.org/docs/config.html
 #    http://conda.pydata.org/docs/install/central.html
 
-
-# directories to search for conda environments
-# (the first entry is also the default prefix for `conda create` etc.)
-#envs_dirs:
-#  - <ANY DIRECTORY YOU WANT>
-
 # change ps1 when using activate (default True)
 changeps1: True
 
@@ -33,14 +27,17 @@ auto_update_conda: false
 # Don't use channel priority
 channel_priority: false
 
+# always use soft-links instead of hard-links (default False)
+#always_softlink: True
+
 # channel locations. These override conda defaults, i.e., conda will
 # search *only* the channels listed here, in the order given. Use "defaults" to
 # automatically include all default channels. Non-url channels will be
 # interpreted as anaconda usernames (this can be changed by modifying the
 # channel_alias key; see below).
-channels:
-  - kadrlica
-  - defaults
+#channels:
+#  - kadrlica
+#  - defaults
 #  - conda-forge
 #  - astropy
 #  - mgckind      # easyaccess
