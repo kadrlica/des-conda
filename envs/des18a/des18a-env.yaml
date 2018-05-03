@@ -5,7 +5,7 @@
 #
 # This file may be used to create an environment using:
 # $ conda env create -v -f <this file>
-name: des18a-2
+name: des18a
 channels:
   - kadrlica
   - defaults
@@ -31,7 +31,7 @@ dependencies:
   #- easyaccess # pip
   - emcee
   - ephem  
-  - esutils=0.6.2.5  # kadrlica
+  - esutil=0.6.2.5   # kadrlica
   - fitsio=0.9.12rc1 # kadrlica
   - future
   - git=2.12.2=pl5.20.3_0 # kadrlica
@@ -58,6 +58,7 @@ dependencies:
   - proj4  
   - psycopg2  
   - pymc  
+  - pyraf
   - pyslalib  # kadrlica
   - python=2
   #- python-redmine # pip

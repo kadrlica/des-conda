@@ -28,7 +28,7 @@ auto_update_conda: false
 channel_priority: false
 
 # always use soft-links instead of hard-links (default False)
-#always_softlink: True
+always_softlink: True
 
 # channel locations. These override conda defaults, i.e., conda will
 # search *only* the channels listed here, in the order given. Use "defaults" to

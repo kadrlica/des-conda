@@ -50,6 +50,21 @@ RETURN = {
     'warn': COLORS['WARN']+"Warning"+COLORS['END'],
 }
 
+def test_modules(deps):
+    print("Testing modules... ")
+    for i,module in enumerate(deps):
+        if isinstance(module,dict):
+            for key,val in module.items():
+                for mod in val:
+                    test_import(mod)
+        else:
+            module = module.split('=')[0]
+            test_import(module)
+
+        if module in TESTS.keys(): 
+            print("  ", end="")
+            TESTS[module]()
+
 def test_import(module):
     module = module.split('=')[0]
     if module in SKIP: 
@@ -64,17 +79,6 @@ def test_import(module):
         print(RETURN['fail'])
         print("  ImportError: %s"%e)
 
-def test_modules(deps):
-    print("Testing modules... ")
-
-    for i,module in enumerate(deps):
-        if isinstance(module,dict):
-            for key,val in module.items():
-                for mod in val:
-                    test_import(mod)
-        else:
-            test_import(module)
-
 def test_matplotlib():
     print("Testing matplotlib figures... ",end="")
     import os
@@ -88,6 +92,21 @@ def test_matplotlib():
     plt.close('all')
     print(RETURN['ok'])
 
+def test_esutil():
+    print("Testing esutil... ",end="")
+    import esutil
+    try:
+        esutil.test()
+    except:
+        print(RETURN['fail'])
+    else:
+        print(RETURN['ok'])
+
+TESTS = {
+    'matplotlib': test_matplotlib,
+    'esutil': test_esutil,
+}
+    
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
@@ -100,6 +119,3 @@ if __name__ == "__main__":
     
     # Test all the imports
     test_modules(deps)
-
-    # Other specific tests
-    test_matplotlib()
