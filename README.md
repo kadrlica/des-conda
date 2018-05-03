@@ -81,6 +81,13 @@ There may be issues with updating the `anaconda` metapackage (i.e., unresolvable
 > screen_publish
 ```
 
+## Tagging
+
+To tag a version on cvmfs:
+```
+cvmfs_server tag -a des18a-1.0 -m "des18a conda environment" des.opensciencegrid.org
+```
+
 ## Cleaning Unused Packages
 
 Conda can accumulate a lot of unused packages. The preserve disk space, these can be cleaned up with:
