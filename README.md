@@ -38,7 +38,7 @@ See instructions for [managing an environment](https://conda.io/docs/using/envs.
 > screen_publish
 ```
 
-In the above commands `<ENVNAME>` is the name of the environment that you want to create and `<PACKAGES>` is the list of python packages that you want to install into this environment. The conda workflow functions best when new environments are created with all their required packages rather than creating an environment and then installing packages piecemeal. To ensure this, we recommend pre-defining your environment in a yaml file. You can find several of these in the [env](env) directory. To create an environment from a yaml spec:
+In the above commands `<ENVNAME>` is the name of the environment that you want to create and `<PACKAGES>` is the list of python packages that you want to install into this environment. The conda workflow functions best when new environments are created with all their required packages rather than creating an environment and then installing packages piecemeal. To ensure this, we recommend pre-defining your environment in a yaml file. You can find several of these in the [env](env) directory. To create an environment from a yaml specification:
 
 ```
 > conda_setup
@@ -61,23 +61,21 @@ Installing a package into an existing environment (especially an environment tha
 
 ## Updating conda/anaconda
 
-From time to time we want to upgrade `conda` and `anaconda` themselves. More details on this process can be found [here](https://github.com/ContinuumIO/anaconda-issues/issues/984).
-
+From time to time we want to upgrade `conda` and `anaconda` themselves. More details on this process can be found [here](https://docs.anaconda.com/anaconda/install/update-version/) and an older thread [here](https://github.com/ContinuumIO/anaconda-issues/issues/984). I've found that it can be necessary to use `conda install` rather than `conda update`, and that it is better to update anaconda first.
 ```
 > conda_setup
 > cvmfs_transaction
-> conda update anaconda 
-> conda update conda
+> conda install -v anaconda=<VERSION>
+> conda update -v conda
 > screen_publish
 ```
 
-There may be issues with updating the `anaconda` metapackage (i.e., unresolvable conflicts, etc.). In this case, we can update all packages, then revert to a specific anaconda instance.
-
+There may be issues with updating the `anaconda` metapackage (i.e., unresolvable conflicts, etc.). In this case, we can update all packages, then revert to a specific Anaconda instance.
 ```
 > conda_setup
 > cvmfs_transaction
-> conda update --all
-> conda update conda
+> conda update -v --all
+> conda update -v conda
 > screen_publish
 ```
 
@@ -86,6 +84,10 @@ There may be issues with updating the `anaconda` metapackage (i.e., unresolvable
 To tag a version on cvmfs:
 ```
 cvmfs_server tag -a des18a-1.0 -m "des18a conda environment" des.opensciencegrid.org
+```
+to list the tagged versions:
+```
+cvmfs_server tag -l des.opensciencegrid.org
 ```
 
 ## Cleaning Unused Packages
