@@ -1,0 +1,91 @@
+# Default environment for FNAL DES 2020
+# 
+# To create this file:
+# $ conda env export
+#
+# This file may be used to create an environment using:
+# $ conda env create -v -f <this file>
+name: des20a
+channels:
+  - conda-forge
+dependencies:
+  #- adstex # pip
+  #- altair # removed
+  #- anaconda # updated separately
+  - astropy=4
+  - astroquery
+  - basemap  
+  - beautifulsoup4 
+  - bfg
+  - bokeh
+  - cartopy
+  - cffi 
+  #- conda # upgraded separately
+  - corner
+  #- cosmolopy # pip
+  - cx_oracle #==5.3
+  - cython #=0.29.16
+  - dask
+  - datashader
+  #- des-easyaccess # pip
+  - pkgw-forge::ds9  
+  #- easyaccess # pip
+  - emcee
+  - ephem  
+  - esutil  # conda-forge
+  - fastparquet
+  - fitsio #==1.1.2   # kadrlica
+  - future
+  - galsim=2.2.3
+  - kadrlica::git=2.12.2=pl5.20.3_0
+  - h5py
+  - healpy =1.13.0 # conda-forge
+  - ipympl
+  - ipython=7.13.0
+  #- iraf  # removed
+  - jupyter=1.0.0
+  - joblib 
+  #- latexdiffcite # pip
+  - line_profiler  
+  - matplotlib=3.2.1
+  - memory_profiler
+  - netcdf4  
+  - nose  
+  - numba  
+  - numexpr  
+  - numpy=1.18.1
+  - kadrlica::oracle-instantclient ==11.2.0.4.0 # kadrlica
+  - pandas=1.0.3
+  - pandasql  
+  - pip  
+  - psycopg2
+  - pymc  
+  #- pyraf     # removed
+  #- pyslalib  # removed
+  - python=3.7
+  #- python-redmine # pip
+  #- pyvo
+  - requests  
+  - scikit-image=0.16
+  - scikit-learn=0.22
+  - scipy=1.4.1
+  - seaborn
+  - sphinx
+  - sqlalchemy  
+  - sqlite  
+  - svn
+  - sympy  
+  - termcolor  
+  #- textile    # pip
+  - treecorr 
+  - versioneer
+  - yaml
+  - pip:
+      - adstex
+      - cosmolopy  
+      - dustmaps
+      - easyaccess==1.4.7
+      - latexdiffcite
+      - mkauthlist==1.2.3
+      - python-redmine
+      - textile
