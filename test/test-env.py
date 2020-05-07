@@ -8,11 +8,14 @@ import importlib
 import yaml
 
 SKIP = [
-    'ds9',
+    'bfg',
+    'cfitsio',
+    'ds9','pkgw-forge::ds9',
     'geos',
     'git',
     'iraf',
     'ipython',
+    'kadrlica::oracle-instantclient',
     'proj4',
     'python',
     'r',
@@ -58,10 +61,10 @@ def test_modules(deps):
                 for mod in val:
                     test_import(mod)
         else:
-            module = module.split('=')[0]
+            module = module.split('=')[0].strip()
             test_import(module)
 
-        if module in TESTS.keys(): 
+        if module in list(TESTS.keys()): 
             print("  ", end="")
             TESTS[module]()
 
@@ -113,7 +116,7 @@ if __name__ == "__main__":
     parser.add_argument('env')
     args = parser.parse_args()
     
-    env = yaml.load(open(args.env))
+    env = yaml.safe_load(open(args.env))
     print("Testing: %s"%env['name'])
     deps = env['dependencies']
     
