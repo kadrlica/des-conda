@@ -10,7 +10,6 @@ channels:
   - conda-forge
 dependencies:
   #- adstex # pip
-  #- altair # removed
   #- anaconda # updated separately
   - astropy=4
   - astroquery
@@ -20,31 +19,31 @@ dependencies:
   - bokeh
   - cartopy
   - cffi 
+  - cfitsio
   #- conda # upgraded separately
   - corner
   #- cosmolopy # pip
-  - cx_oracle #==5.3
-  - cython #=0.29.16
+  - cx_oracle 
+  - cython 
   - dask
   - datashader
-  #- des-easyaccess # pip
   - pkgw-forge::ds9  
   #- easyaccess # pip
   - emcee
   - ephem  
-  - esutil  # conda-forge
+  - esutil  
   - fastparquet
-  - fitsio #==1.1.2   # kadrlica
+  - fitsio =1.1.2 
   - future
   - galsim=2.2.3
-  - kadrlica::git=2.12.2=pl5.20.3_0
+  - git
   - h5py
-  - healpy =1.13.0 # conda-forge
+  - healpy =1.13.0 
   - ipympl
   - ipython=7.13.0
-  #- iraf  # removed
   - jupyter=1.0.0
   - joblib 
+  - keras
   #- latexdiffcite # pip
   - line_profiler  
   - matplotlib=3.2.1
@@ -53,33 +52,31 @@ dependencies:
   - nose  
   - numba  
   - numexpr  
-  - numpy=1.18.1
-  - kadrlica::oracle-instantclient ==11.2.0.4.0 # kadrlica
+  - numpy =1.18
+  - kadrlica::oracle-instantclient ==11.2.0.4.0
   - pandas=1.0.3
   - pandasql  
   - pip  
   - psycopg2
   - pymc  
-  #- pyraf     # removed
-  #- pyslalib  # removed
   - python=3.7
   #- python-redmine # pip
-  #- pyvo
+  - pyyaml
   - requests  
-  - scikit-image=0.16
-  - scikit-learn=0.22
-  - scipy=1.4.1
+  - scikit-image =0.16
+  - scikit-learn =0.22
+  - scipy =1.4.1
   - seaborn
   - sphinx
   - sqlalchemy  
   - sqlite  
   - svn
   - sympy  
+  - tensorflow
   - termcolor  
   #- textile    # pip
   - treecorr 
   - versioneer
-  - yaml
   - pip:
       - adstex
       - cosmolopy  
