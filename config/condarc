@@ -12,7 +12,7 @@ add_pip_as_python_dependency: True
 
 # When creating new environments add these packages by default.
 #create_default_packages:
-#  - git=2.12.2
+#  - pip
 
 # use pip when listing packages with conda list
 #use_pip: False
@@ -39,9 +39,3 @@ always_softlink: True
 #  - kadrlica
 #  - defaults
 #  - conda-forge
-#  - astropy
-#  - mgckind      # easyaccess
-#  - http://astroconda.org/channel/main # iraf
-#  - pkgw         # ds9
-#  - chenghlee    # r-rpostgresql
-#  - jochym       # pyfits
