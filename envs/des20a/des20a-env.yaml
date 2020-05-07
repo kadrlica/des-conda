@@ -33,12 +33,12 @@ dependencies:
   - ephem  
   - esutil  
   - fastparquet
-  - fitsio =1.1.2 
+  - fitsio=1.1.2 
   - future
   - galsim=2.2.3
   - git
   - h5py
-  - healpy =1.13.0 
+  - healpy=1.13.0 
   - ipympl
   - ipython=7.13.0
   - jupyter=1.0.0
@@ -52,7 +52,7 @@ dependencies:
   - nose  
   - numba  
   - numexpr  
-  - numpy =1.18
+  - numpy=1.18
   - kadrlica::oracle-instantclient ==11.2.0.4.0
   - pandas=1.0.3
   - pandasql  
@@ -63,9 +63,9 @@ dependencies:
   #- python-redmine # pip
   - pyyaml
   - requests  
-  - scikit-image =0.16
-  - scikit-learn =0.22
-  - scipy =1.4.1
+  - scikit-image=0.16
+  - scikit-learn=0.22
+  - scipy=1.4.1
   - seaborn
   - sphinx
   - sqlalchemy  
