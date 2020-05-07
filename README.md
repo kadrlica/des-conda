@@ -98,7 +98,7 @@ Conda can accumulate a lot of unused packages. The preserve disk space, these ca
 conda clean -v -y -tis
 ```
 
-We don't want to use the `--packages` option because cvmfs is breaking symlinks (see [here](https://github.com/conda/conda/issues/3308#issuecomment-244366064)). 
+We don't want to use the `--packages` option because cvmfs is breaking symlinks (see [here](https://github.com/conda/conda/issues/3308#issuecomment-244366064) and [here](https://docs.conda.io/projects/conda/en/latest/commands/clean.html)). 
 
 ## Notes
 
