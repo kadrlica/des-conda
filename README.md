@@ -44,6 +44,7 @@ In the above commands `<ENVNAME>` is the name of the environment that you want t
 > conda_setup
 > cvmfs_transaction
 > conda env create -v -f <FILENAME> 2>&1 | tee ~/log/<ENVNAME>.log
+> conda clean -v -y -ti
 > screen_publish
 ```
 
@@ -92,13 +93,12 @@ cvmfs_server tag -l des.opensciencegrid.org
 
 ## Cleaning Unused Packages
 
-Conda can accumulate a lot of unused packages. The preserve disk space, these can be cleaned up with:
-
+Conda can accumulate a lot of unused packages that fill up disk space (which cvmfs doesn't like). Packages can be cleaned up up with:
 ```
-conda clean -v -y -tis
+conda clean -v -y -ti
 ```
 
-We don't want to use the `--packages` option because cvmfs is breaking symlinks (see [here](https://github.com/conda/conda/issues/3308#issuecomment-244366064)). 
+Note that we don't want to use the `--packages` option because cvmfs will break symlinks (see [here](https://github.com/conda/conda/issues/3308#issuecomment-244366064)). 
 
 ## Notes
 
@@ -106,3 +106,16 @@ The `--no-update-deps` is important to keep from accidentally updating everythin
 
 You may run into issues with conda trying to modify packages from other channels. In theory the `--override-channels` flag should stop this, but on several occasions I've found that I need to comment out the channels in the [`.condarc`][config/condarc] file.
 
+CVMFS complains and fails to publish if a `catalog` contains more than 500k entries. The documentation recommends creating [nested catalogs](https://twiki.cern.ch/twiki/bin/view/CvmFS/MaintainRepositories), containing between 1k and 200k entries. The easiest way to implement this was to make some of the largest packages nested catalogs:
+```
+for dir in $(ls -d ${DES_PATH}/fnal/anaconda2/pkgs/*/); do echo $(find $dir -type f | wc -l) $(basename $dir); done | sort -n -k1
+for dir in $(\ls -d ${DES_PATH}/fnal/anaconda2/pkgs/{python,iraf,qt}-[0-9]*); do 
+  touch ${dir}/.cvmfscatalog; 
+done
+```
+It also seems reasonable to make each environment a nested catalog:
+```
+for dir in $(\ls -d ${DES_PATH}/fnal/anaconda2/envs/*/); do
+  touch ${dir}/.cvmfscatalog; 
+done
+```
