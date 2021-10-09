@@ -1,6 +1,6 @@
 # des-conda
 
-Control tools for the DES Anaconda installation at Fermilab. Follow the links for more information on [Anaconda](https://anaconda.org/) and [conda](https://conda.io/docs/index.html).
+Control tools for the DES conda installation at Fermilab. More information on [conda](https://conda.io/docs/index.html).
 
 The following instructions assume that your environment has the alias defined in [config/bashrc](config/bashrc).
 
